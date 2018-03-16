@@ -5,21 +5,19 @@
  */
 package com.mavha.ams.app.seguridad.logica;
 
-import com.mavha.ams.app.seguridad.modelo.Agenda;
+import com.mavha.ams.app.seguridad.modelo.Tarea;
 import java.util.List;
 
 /**
  *
  * @author marti
  */
-public interface AgendaLogica {
+public interface TareaLogica {
 
-    void borrarAgenda(Integer id);
+    void borrarTarea(Integer id);
 
-    void crearAgenda(String nombre);
+    void crearTarea(String desc,Integer idAgenda);
 
-    List<Agenda> listaDeAgendas();
-    
-    Agenda buscar(Integer id);
+    List<Tarea> listaDeTareas(Integer idAgenda);
     
 }

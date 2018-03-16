@@ -3,7 +3,8 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./../template1.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="top">
         top
@@ -26,19 +27,22 @@
             <div class="ui-g">
                 <div class="ui-g-3"></div>                
                 <div class="ui-g-6">
-                <p:dataTable var="agenda" value="#{agendaController.lista}">
-                    <p:column headerText="Id">
-                        <h:outputText value="#{agenda.id}" />
-                    </p:column>
+                    <p:dataTable var="agenda" value="#{agendaController.lista}">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{agenda.id}" />
+                        </p:column>
 
-                    <p:column headerText="Year">
-                        <h:outputText value="#{agenda.nombre}" />
-                    </p:column>
-                    <p:column headerText="Acciones">
-                        <p:commandButton value="Borrar" action="#{agendaController.borrarAgenda(agenda.id)}" update="frmAgenda"></p:commandButton>
-                        <p:commandButton value="Ver Tareas"></p:commandButton>
-                    </p:column>
-                </p:dataTable>
+                        <p:column headerText="Year">
+                            <h:outputText value="#{agenda.nombre}" />
+                        </p:column>
+                        <p:column headerText="Acciones">
+                            <p:commandButton value="Borrar" action="#{agendaController.borrarAgenda(agenda.id)}" update="frmAgenda"></p:commandButton>
+                            <p:link outcome="/tareas/listaTareas.xhtml" includeViewParams="true" value="Ver Tareas">
+                                <f:param name="idAgenda" value="#{agenda.id}"/> 
+                            </p:link>
+
+                        </p:column>
+                    </p:dataTable>
                 </div>
                 <div class="ui-g-3"></div>
             </div>

@@ -39,4 +39,9 @@ public class AgendaLogicaDefault implements AgendaLogica {
     public List<Agenda> listaDeAgendas(){
         return em.createQuery("SELECT a FROM Agenda a").getResultList();
     }
+
+    @Override
+    public Agenda buscar(Integer id) {
+        return em.find(Agenda.class, id);
+    }
 }

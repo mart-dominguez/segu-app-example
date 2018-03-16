@@ -6,6 +6,7 @@
 -- Tiempo de generación: 15-03-2018 a las 13:47:56
 -- Versión del servidor: 5.5.58-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.22
+use AMS_SEGU;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
